@@ -28,7 +28,7 @@
   transition: color 300ms, background-color 300ms, text-shadow 300ms; /* Add text-shadow to the transition */
 }
 
-/* Custom Fonts: */
+/* Custom Fonts Used Throughout: */
 @font-face {
     font-family: myFont;
     src: url(S.otf);
@@ -188,8 +188,6 @@ span{
     display: flex;
 }
 
-
-
 .bubbles{
     z-index : -100;
 }
@@ -206,16 +204,10 @@ span{
     animation-duration: calc(125s / var(--i));
 }
 
-
-
 .bubbles span:nth-child(even){
     background: #8F00FF;
     box-shadow: 0 0 0 10px #BE93E4, 0 0 50px #8F00FF, 0 0 100px #9966CC;
-
 }
-
-
-
 
 .mySocials {
     background-color: rgb(0,0,0);
@@ -233,11 +225,9 @@ span{
     padding: 0vw;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
- 
-  }
+}
 
-  #myFooter {
+#myFooter {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -246,33 +236,33 @@ span{
     color: black; 
     padding: 10px 0; 
     z-index: 1000; 
-  }
+}
   
 .mySocials-head span{
     color: black;
     text-shadow: 5px 0px 5px #4fc3dc;
-  }
+}
 
-    .mySocials a {
+.mySocials a {
     display: inline-block;
     margin: 0 10px;
     font-size: 50px;
     color: #000;
-  }
+}
   
-  .mySocials a:hover {
+.mySocials a:hover {
     color: #8F00FF;
     transform: scale(1.3);
     transition: transform 0.3s ease;
-  }
+}
 
-  .text {
+.text {
     margin-left: 0.5vw;
     margin-right: 0.5vw;
     font-size: 1vw;
     text-align: center;
     vertical-align: text-top;
-  }
+}
 
 .myProjects {
     background-color: rgb(0,0,0);
@@ -290,7 +280,7 @@ span{
     padding: 0vw;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+}
 
 .myProjects-link .myProjects{
   animation: fade-in 2s ease-in-out , glow 2s infinite;
@@ -330,7 +320,7 @@ span{
     animation: fade-in 1s ease-in-out;
 }
   
-  .myProjects-showcase .project {
+.myProjects-showcase .project {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.4);
     border-radius: 1%;
@@ -402,12 +392,12 @@ span{
   /* Customize the scrollbar for WebKit browsers (Chrome and Safari) */
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: var(--custom-scrollbar-colour); /* Use your website's background color */
+  background-color: var(--custom-scrollbar-colour); /* Use website's background color */
 }
 
 /* Customize the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--custom-scrollbar-colour); /* Use your website's text color */
+  background-color: var(--custom-scrollbar-colour); /* Use  website's text color */
   border-radius: 5px; /* Round the corners of the thumb */
 }
 
@@ -418,7 +408,7 @@ span{
 
 /* Customize the scrollbar track (the non-draggable part) */
 ::-webkit-scrollbar-track {
-  background-color: var(--background-color); /* Use your website's background color */
+  background-color: var(--background-color); /* Use  website's background color */
 }
 
 /* Customize the scrollbar corner (where vertical and horizontal scrollbars meet) */
@@ -468,11 +458,11 @@ span{
 
 .myProjects h1{
     color: black;
-  }
+}
 
 .myProjects-head span{
     color: black;
-  }
+}
 
 /* Keyframes for various animations across my website: */
 @keyframes animate {
@@ -496,7 +486,6 @@ span{
   }
 }
 
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -505,7 +494,6 @@ span{
     transform: translateY(-10px);
   }
 }
-
 
 @keyframes glow {
   0% {
@@ -719,5 +707,3 @@ span{
     overflow-y: scroll;
   }
 }
-
-
