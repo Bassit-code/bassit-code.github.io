@@ -1,0 +1,723 @@
+/* Light Theme (Default) */
+:root {
+  --background-color: #d3d3d3;
+  --text-color: black;
+  --custom-thumb-color: #BE93E4;
+  --custom-scrollbar-colour: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Theme */
+.dark-mode {
+  --background-color: #121212;
+  --text-color: #FEFEFA;
+  --text-color-2: #FEFEFA;
+  --text-shadow-dark: 5px 0px 5px #B6B6B4;
+  --text-shadow-dark-2: 5px 0px 15px #800020;
+  --background: #800020;
+  --box-shadow: #D21F3C;
+  --background-2: #FAF5EF;
+  --box-shadow-2: #B6B6B4;
+  --border: 0.30vw solid #C5C6D0;
+  --border-img: 0.30vw solid #333;
+  --background-col: rgb(255,250,250, 0.7);
+  --background-col-2: rgb(255,250,250, 0.5);
+  --color: #800020;
+  --animation: fade-in 2s ease-in-out , dark-mode-glow 2s infinite;
+  --custom-scrollbar-colour-darkmode:rgba(128, 0, 32, 0.7);
+  --projects-hover-dark: rgba(128, 0, 32, 0.5);
+  transition: color 300ms, background-color 300ms, text-shadow 300ms; /* Add text-shadow to the transition */
+}
+
+/* Custom Fonts: */
+@font-face {
+    font-family: myFont;
+    src: url(S.otf);
+        
+}
+
+@font-face {
+    font-family: myFont2;
+    src: url(C.ttf);
+        
+}
+
+@font-face {
+  font-family: myFont3;
+  src: url(Fonts/FiraCode-VariableFont_wght.ttf);
+}
+
+/* Styling for specific elements in dark mode */
+body.dark-mode .about-me  h1  {
+  color: var(--text-color);
+  text-shadow: var(--text-shadow-dark);
+}
+
+body.dark-mode  span{
+  color: var(--text-color-2);
+  text-shadow: var(--text-shadow-dark-2);
+}
+
+body.dark-mode .about-me p {
+  color: var(--text-color);
+}
+
+body.dark-mode .mySocials,
+body.dark-mode .myProjects,
+body.dark-mode .myProjects-showcase .project{
+  border: var(--border);
+  background-color: var(--background-col);
+  background-color: var(--background-col-2);
+}
+
+body.dark-mode .mySocials a:hover{
+  color: var(--color);
+}
+
+body.dark-mode .myProjects:hover{
+  background-color: var(--projects-hover-dark);
+}
+
+body.dark-mode .bubbles span{
+  background: var(--background);
+  box-shadow: 0 0 0 10px var(--box-shadow), 0 0 50px var(--background), 0 0 100px var(--background);;
+  transition: color 300ms, background-color 300ms;
+}
+
+body.dark-mode .bubbles span:nth-child(even){
+  background: var(--background-2);
+  box-shadow:  0 0 10px var(--box-shadow-2), 0 0 50px var(--background-2), 0 0 100px var(--background-2);
+  transition: color 300ms, background-color 300ms;
+}
+
+body.dark-mode #myFooter{
+  color: var(--text-color);
+}
+
+body.dark-mode #myProjects-Title{
+  color: var(--text-color);
+  text-shadow: var(--text-shadow-dark);
+}
+
+body.dark-mode #myProjects-Title span{
+  color: var(--text-color-2);
+  text-shadow: var(--text-shadow-dark-2);
+}
+
+body.dark-mode  .myProjects-showcase .project:hover{
+  background-color: var(--background);
+}
+
+body.dark-mode .myProjects-showcase .project-name{
+  color: var(--text-color-2);
+}
+
+body.dark-mode .myProjects-showcase .project img{
+    border: var(--border-img);
+}
+
+body.dark-mode .myProjects-link .myProjects{
+ animation: var(--animation);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb{
+  background-color: var(--text-color-2);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover{
+  background-color: var(--custom-scrollbar-colour-darkmode);
+}
+
+/* Global CSS styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global body styles */
+body{
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: myFont3;
+}
+
+/* Styling for bubbles section */
+.bubbles span {
+    animation: animate-bubbles 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.about-me h1 {
+   animation: animate-about-me 1s ease-in-out; 
+}
+
+.about-me {
+    text-align: center;
+}
+  
+.about-me h1{
+    font-size: 70px;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 200px;
+    text-shadow: 5px 0px 5px #4fc3dc;
+    font-family: myFont3;
+}
+/*separated using span tag to add different colour*/
+span{
+    color: black;
+    text-shadow: 5px 0px 5px #8F00FF;
+}
+
+.about-me p{
+    color: black;
+    line-height: 22px;
+    font-family: myFont3;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+
+
+.bubbles{
+    z-index : -100;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background:  #C6E6FB;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #006994;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+
+
+.bubbles span:nth-child(even){
+    background: #8F00FF;
+    box-shadow: 0 0 0 10px #BE93E4, 0 0 50px #8F00FF, 0 0 100px #9966CC;
+
+}
+
+
+
+
+.mySocials {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    border-radius: 5vw;
+    color: black;
+    font-weight: bold;
+    border: 0.30vw solid #333;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15.0%;
+    padding: 0vw;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+ 
+  }
+
+  #myFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: black; 
+    padding: 10px 0; 
+    z-index: 1000; 
+  }
+  
+.mySocials-head span{
+    color: black;
+    text-shadow: 5px 0px 5px #4fc3dc;
+  }
+
+    .mySocials a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 50px;
+    color: #000;
+  }
+  
+  .mySocials a:hover {
+    color: #8F00FF;
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+  }
+
+  .text {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    font-size: 1vw;
+    text-align: center;
+    vertical-align: text-top;
+  }
+
+.myProjects {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    border-radius: 5vw;
+    color: black;
+    font-weight: bold;
+    border: 0.30vw solid #333;
+    position: absolute;
+    top: 59.7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15.0%;
+    padding: 0vw;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+.myProjects-link .myProjects{
+  animation: fade-in 2s ease-in-out , glow 2s infinite;
+}
+  
+.myProjects:hover {
+    background-color: rgba(79, 195, 220, 0.4);
+}
+
+  .myProjects-link {
+    text-align: center;
+    padding: 10px;
+}
+
+#myProjects-Title{
+    font-size: 70px;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 5px 0px 5px #4fc3dc;
+    font-family: myFont3;
+    animation: fade-in 1s ease-in-out , float 4s infinite ease-in-out;
+}
+
+#myProjects-Title span{
+    color: black;
+    text-shadow: 5px 0px 5px #8F00FF;
+    animation: fade-in 1s ease-in-out;
+}
+  
+.myProjects-showcase {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    animation: fade-in 1s ease-in-out;
+}
+  
+  .myProjects-showcase .project {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    border-radius: 1%;
+    color: black;
+    font-weight: bold;
+    border: 0.30vw solid #333;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 300ms;
+    width: 300px;
+    height: 400px;
+    margin-left: 30px; 
+    margin-top: 50px; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    animation: fade-in 1s ease-in-out;
+}
+
+.myProjects-showcase .project .project-image-container {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.myProjects-showcase .project img {
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain;
+  border-radius: 5%; 
+  border: 0.15vw solid #FAF5EF; 
+  margin-top: 69px;
+  animation: fade-in 2s ease-in-out;
+}
+
+.myProjects-showcase .project-name {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    animation: fade-in 3s ease-in-out;
+}
+
+.myProjects-showcase .project-description {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 300ms;
+}
+
+.myProjects-showcase .project:hover {
+    background-color: #4fc3dc; /* Light blue background color on hover */
+}
+
+.myProjects-showcase .project:hover .project-description {
+    opacity: 1; /* Show the project description on hover */
+}
+
+  /* Customize the scrollbar for WebKit browsers (Chrome and Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--custom-scrollbar-colour); /* Use your website's background color */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--custom-scrollbar-colour); /* Use your website's text color */
+  border-radius: 5px; /* Round the corners of the thumb */
+}
+
+/* Customize the scrollbar track when hovering over it */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--custom-thumb-color); /* Use another color on hover */
+}
+
+/* Customize the scrollbar track (the non-draggable part) */
+::-webkit-scrollbar-track {
+  background-color: var(--background-color); /* Use your website's background color */
+}
+
+/* Customize the scrollbar corner (where vertical and horizontal scrollbars meet) */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    cursor: pointer;
+    z-index: 2;
+    animation: fade-in 2s ease-in-out;
+    
+}
+
+#moonIcon,
+#sunIcon {
+    font-size: 24px; 
+}
+
+#sunIcon {
+    display: none;
+}
+
+#homeIcon{
+  position: absolute;
+  top: 20px; 
+  right: 10px; 
+  margin-right: 40px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 20px;
+  animation: fade-in 2s ease-in-out;
+}
+
+#homeIcon .home-link {
+  color: inherit; 
+  text-decoration: none; 
+  
+}
+
+.mySocials {
+    animation: animate-mySocials 1s ease-in-out;
+}
+
+.myProjects h1{
+    color: black;
+  }
+
+.myProjects-head span{
+    color: black;
+  }
+
+/* Keyframes for various animations across my website: */
+@keyframes animate {
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(79, 195, 220, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(79, 195, 220, 0.9), 0 0 30px rgba(79, 195, 220, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(79, 195, 220, 0.7);
+  }
+}
+
+@keyframes dark-mode-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(128, 0, 32, 0.9), 0 0 30px rgba(128, 0, 32, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(128, 0, 32, 0.7);
+  }
+}
+
+@keyframes animate-about-me {
+    0% {
+        transform: translateY(50vh) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animate-mySocials {
+    0% {
+        transform: translate(-50%, -50%) translateY(10vh) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media queries for the Home Page: */
+@media screen and (max-width: 576px),(max-width: 768px), (max-width: 992px), (max-width: 1200px) {
+    .about-me h1 {
+      font-size: 40px;
+      margin-top: 150px;
+    }
+  
+    .about-me p {
+      font-size: 14px;
+    }
+  
+    .mySocials,
+    .myProjects {
+      width: 80% !important;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    .about-me h1 {
+      font-size: 60px;
+      margin-top: 50px;
+    }
+  
+    .about-me p {
+      font-size: 14px;
+    }
+  
+    .mySocials,
+    .myProjects {
+      width: 20%;
+    }
+
+    .myProjects{
+      margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px),(max-width: 768px){
+  .text{
+    font-size: 20px;
+  }
+}
+
+/* Media query for even smaller screens */
+  @media screen and (max-width: 480px) {
+    .about-me h1 {
+      font-size: 35px;
+      margin-top: 100px;
+    }
+  
+    .about-me p {
+      font-size: 12px;
+    }
+  
+    .mySocials,
+    .myProjects {
+      width: 90%;
+    }
+
+    .text{
+      font-size: 20px;
+    }
+  }
+
+/* Media queries for the bubbles background: */
+  @media screen and (max-width: 576px),(max-width: 768px), (max-width: 992px), (max-width: 1200px) , (max-width: 1366px) {
+    .bubbles {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .bubbles span {
+      width: 20px;
+      height: 20px;
+      margin: 4px;
+    }
+  }
+  
+  /* Media query for even smaller screens */
+  @media screen and (max-width: 480px) {
+    .bubbles {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .bubbles span {
+      width: 15px;
+      height: 15px;
+      margin: 2px;
+    }
+  }
+
+/* Media queries for the Projects page: */
+@media screen and (max-width: 576px) {
+    .myProjects-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-left: -5px !important;
+      
+    }
+  
+    .myProjects-showcase .project {
+      width: 55% !important;
+      margin: 20px 0;
+      
+    }
+  
+    .myProjects-showcase .project img {
+      margin-top: 20px;
+    }
+  }
+  
+@media screen and (max-width: 768px) {
+    .myProjects-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-left: -5px !important;
+      
+    }
+  
+    .myProjects-showcase .project {
+      width: 45%;
+      margin-left: 20px;
+    }
+  
+    .myProjects-showcase .project img {
+      margin-top: 75px;
+    }
+  }
+  
+@media screen and (max-width: 992px){
+  .myProjects-showcase {
+    margin-left: 300px;
+    max-height: 70vh; 
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .myProjects-showcase {
+    margin-left: 100px;
+    max-height: 50vh; 
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 1366px){
+  .myProjects-showcase {
+    max-height: 30vh; 
+    overflow-y: scroll;
+  }
+
+}
+
+@media screen and (max-width: 1920px){
+  .myProjects-showcase {
+    max-height: 75vh; 
+    overflow-y: scroll;
+  }
+}
+
+
